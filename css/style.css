@@ -1,0 +1,95 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    overflow:hidden;
+}
+#bg_canvas{
+    width:100%;
+    height:100%;
+}
+.container{	
+    position:fixed;
+    width:50%;
+    height:60%;
+    top:20%;
+    left:25%;
+    background:rgba(255,255,255,.2);
+    overflow:hidden;
+}
+.m_title{
+    position:absolute;
+    width:100%;
+    height:10%;
+    font-size:100%;
+    background:rgba(255,255,255,.2);
+}
+#logo{
+    position:relative;
+    float:left;
+    top:5%;
+    left:1%;
+    height:90%;
+    width:auto;
+}
+.m_name{
+    display:block;
+    position:relative;
+    float:left;
+    top :13%;
+    left : 1%;
+    font-size:24px;
+    font-family:"微软雅黑";
+    color:#FFF;
+    
+}
+#menus{
+    position:absolute;
+    top:10%;
+    width:40%;
+    height:75%;
+    background:rgba(255,255,255,.1);
+}
+.m_bottom{
+    position:absolute;
+    width:100%;
+    height:15%;
+    font-size:100%;
+    background:rgba(255,255,255,.2);
+    bottom:0;
+}
+.btn_box{
+    position:relative;
+    float:left;
+    height:100%;
+    width:auto;
+}
+#play{
+    position:relative;
+    top:10%;
+    left : 10%;
+    height :80%;
+    width:auto;
+}
+#prev ,#next{
+    position:relative;
+    left : 10%;
+    height :50%;
+    width:auto;
+}
+.bar_box{
+    position :relative;
+    float:left;
+    left:5%;
+    width:50%;
+    height:100%;
+}
+.progress_bar{`
+    position: absolute;
+    float: left;
+    background:rgba(255,255,255,.5);
+    height: 5%;
+    width: 100%;
+}
