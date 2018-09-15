@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>canvas星空粒子连线</title>
+</head>
+<style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        overflow: hidden;
+    }
+
+    #myCanvas {
+        background-color: black;
+    }
+</style>
+
+<body>
+    <canvas id="myCanvas"></canvas>
+</body>
+<script>
+    let canvas = document.getElementById("myCanvas");
+    let canvas_width = canvas.width = document.documentElement.clientWidth;
+    let canvas_height = canvas.height = document.documentElement.clientHeight;
+    let ctx = canvas.getContext("2d");
+    let Balls = [];
+    let minDistance = 16000
+
+    //随机生成小球的圆心 半径
+    function createBall() {
+
+        Cx = Math.random() * canvas.width;
+        Cy = Math.random() * canvas.height;
+        Cr = Math.random() * 1 + 1;
+        speedX = randomNum(-2, 2) * 0.2;
+        speedY = randomNum(-2, 2) * 0.2;
+        Balls.push({
+            Cx,
+            Cy,
+            Cr,
+            speedX,
+            speedY
+        })
+
+    }
+
+    for (i = 0; i < 100; i++) {
+        createBall()
+    }
+
+    //绘制一个小球
+    function drawBall(obj) {
+        obj.Cx += obj.speedX
+        obj.Cy += obj.speedY
+        if (obj.Cx >= canvas_width - 5 || obj.Cx <= 0) {
+            obj.speedX *= -1;
+        }
+        if (obj.Cy >= canvas_height - 5 || obj.Cy <= 0) {
+            obj.speedY *= -1;
+        }
+        ctx.beginPath();
+        ctx.fillStyle = `rgb(250,250,250)`
+        ctx.arc(obj.Cx, obj.Cy, obj.Cr, 0, Math.PI * 2, false);
+        ctx.fill();
+    }
+
+    function drawAll() {
+        ctx.clearRect(0, 0, canvas_width, canvas_height)
+        Balls.forEach(item => {
+            drawBall(item)
+        })
+        drawLine()
+        window.requestAnimationFrame(drawAll)
+    }
+
+    //小球间距小于100px，则连线
+    function drawLine() {
+        for (let i = 0; i < Balls.length; i++) {
+            for (let j = i + 1; j < Balls.length; j++) {
+                let distance = (Balls[i].Cx - Balls[j].Cx) * (Balls[i].Cx - Balls[j].Cx) + (Balls[i].Cy - Balls[j].Cy) * (Balls[i].Cy - Balls[j].Cy)
+                if (distance < minDistance) {
+                    let a = Math.ceil(minDistance/distance)
+                    ctx.beginPath();
+                    ctx.moveTo(Balls[i].Cx, Balls[i].Cy);
+                    ctx.lineTo(Balls[j].Cx, Balls[j].Cy);
+                    ctx.strokeStyle = randomColor(`.${a}`);                 
+                    ctx.stroke();
+                }
+            }
+        }
+    }
+
+    function randomNum(m, n) {
+        return Math.floor(Math.random() * (n - m + 1) + m);
+    }
+    //随机颜色
+    function randomColor(a) {
+        return "rgba(" + randomNum(0, 255) + "," + randomNum(0, 255) + "," + randomNum(0, 255) + "," + a + ")";
+    }
+
+    window.requestAnimationFrame(drawAll)
+
+</script>
+
+</html>
