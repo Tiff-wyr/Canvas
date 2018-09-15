@@ -81,7 +81,7 @@ h2 span::after{
 	border-right:53px solid transparent;
     border-top:10px solid #F8463F;
     left: 0px;
-    top: 40px;
+    top: 39px;
 }
 .silk-ribbon1:after{
     content: '';
@@ -238,22 +238,23 @@ h2 span::after{
  position: absolute;
 }
 .wrap:before{
- left: 0px;
+ right: 122px;
  top: 0px;
  border-radius:8px 8px 0px 0px;
- width:40px;
+ width:20px;
  height:8px;
  background:#4D6530;
 }
 .wrap:after{
     border-radius:0px 8px 8px 0px;
 	width:8px;
-    height:40px;
+    height:20px;
     right:0px;
-	top:100px;
+	top:121px;
 	background:#4D6530;
 }
 .silk-ribbon6{
+    z-index: 2;
     text-align:center;
     display: block;
     position: absolute;
