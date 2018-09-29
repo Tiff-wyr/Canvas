@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        background: #0d3462
+    }
+
+    .main {
+        width: 900px;
+        margin: 30px auto;
+        height: 300px;
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        perspective: 400;
+        -webkit-perspective: 400
+    }
+    .mainer{
+       flex: 1
+    }
+  
+
+    .main .same {
+        backface-visibility: hidden;
+        transition: transform ease 1s
+    }
+
+     .mainer:hover .pp {
+        transform: rotateY(180deg)
+    }
+    .mainer:hover .simi{
+        transform: rotateY(360deg)
+    }
+
+
+    .same {
+        position: absolute;
+        width: 220px;
+        height: 300px;
+
+    }
+
+    .simi {
+        width: 220px;
+        height: 300px;
+        background: linear-gradient(180deg, #fdbb5a, #db5726);
+        transform: rotateY(180deg)
+    }
+
+    h3 {
+        text-align: center
+    }
+
+    .p1 {
+        background-image: url('./imgs/img1.jpg');
+    }
+    .p2{
+        background-image: url('./imgs/img2.jpg');
+    }
+    .p3 {
+        background-image: url('./imgs/img3.jpg');
+    }
+    .p4{
+        background-image: url('./imgs/img4.jpg');
+    }
+</style>
+
+<body>
+    <div class="main">
+
+        <div class="mainer">
+            <div class="pp same p1"> </div>
+            <div class="simi same">
+                <h3>额哼</h3>
+            </div>
+        </div>
+
+        <div class="mainer">
+            <div class="pp same p2"> </div>
+            <div class="simi same">
+                <h3>哈哈</h3>
+            </div>
+        </div>
+
+        <div class="mainer">
+            <div class="pp same p3"> </div>
+            <div class="simi same">
+                <h3>大姐头</h3>
+            </div>
+        </div>
+
+        <div class="mainer">
+            <div class="pp same p4"> </div>
+            <div class="simi same">
+                <h3>学霸</h3>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

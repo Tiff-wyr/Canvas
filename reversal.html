@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    body{
+        background: pink
+    }
+    .main{
+        position: relative;
+        margin: 20px auto;
+        width: 250px;
+        height: 250px;
+    }
+    .con{
+        top: 0;
+        left: 0;
+        position: absolute;      
+        width: 250px;
+        height: 250px;
+        background-image: url('./imgs/wallet.png');
+        border-radius: 50%;
+        backface-visibility: hidden;
+        transition: transform ease 5s
+        }
+        .main:hover .img1{
+           transform: rotateY(180deg) 
+        }
+        .main:hover .img2{
+            transform: rotateY(0deg)
+        }
+     .img1{
+        background-position: -31px 257px ;
+    }
+     .img2{
+        background-position: -325px 257px ; 
+        transform: rotateY(180deg)
+    
+    }
+
+</style>
+<body>
+    <div class="main">
+        <div class="con img1"></div>
+        <div class="con img2"></div>
+    </div>
+</body>
+</html>
