@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+.bac {
+    width: 345px;
+    height: 500px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    /* background-color: #333333; */
+ }
+ .bac .head{
+    width: 346px;
+    height: 288px;
+    background-color: #e1b79b;
+    border: 3px solid #a57662;
+    border-radius: 50% 50% 50% 50% / 70% 60% 40% 40%;
+    z-index: 988;
+    position: relative;
+ }
+ .earLeft{
+    height: 50px;
+    width: 70px;
+    border-radius: 70% 70% 50% 50%;
+    border: 3px solid #a57662;
+    transform: rotate(-40deg);
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    
+ }
+ .earRight{
+    height: 50px;
+    width: 70px;
+    border-radius: 70% 70% 50% 50%;
+    border: 3px solid #a57662;
+    transform: rotate(40deg);
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    
+ }
+ .head .eyeLeft{
+     width: 80px;
+     height: 60px;
+     background: #fff;
+     border-radius:50%;
+     transform: rotate(-65deg) ;
+     position: absolute;
+     top:80px;
+     left: 50px;
+ }
+ .head .eyeLeft .eyeconLeft{
+    width: 28px;
+    height: 33px;
+    background-color: #511313;
+    position: absolute;
+    border-radius: 50% 50%;
+    transform: rotate(-13deg);
+    top: 20px;
+    right: 26px;
+ }
+ .head .eyeRight{
+    width: 80px;
+     height: 60px;
+     background: #fff;
+     border-radius:50%;
+     transform: rotate(65deg) ;
+     position: absolute;
+     top:80px;
+     right:50px;
+ }
+ .head .eyeRight .eyeconRight{
+    width: 28px;
+    height: 33px;
+    background-color: #511313;
+    position: absolute;
+    border-radius: 50% 50%;
+    transform: rotate(13deg);
+    top: 20px;
+    right: 26px; 
+ }
+ .mouth{
+    width: 99px;
+    height: 76px;
+    background-color: #f7f9e5;
+    border-radius: 50%;
+    position: absolute;
+    top: 174px;
+    left: 50%;
+    transform: translateX(-50%)
+ }
+ .mouth .nose{
+    width: 18px;
+    height: 8px;
+    background-color: #511313;
+    border-radius: 50%/100% 100% 0 0;
+ }
+.head .line1{
+    position: absolute;
+    top: 36px;
+    left: 23px;
+    width: 80px;
+    height: 30px;
+    background-color: #e1b79b;
+    border-radius: 50%;
+    transform: rotate(-45deg);
+}
+.head .line2{
+    position: absolute;
+    top: 31px;
+    right: 22px;
+    width: 80px;
+    height: 30px;
+    background-color: #e1b79b;
+    border-radius: 50%;
+    transform: rotate(40deg);
+}
+
+</style>
+<body>
+    <div class="bac">
+        <!-- 头部 -->
+            <!-- 耳朵 -->
+            <div class="earLeft"></div>
+            <div class="earRight"></div>
+            <!-- 脸 -->
+            <div class="head">  
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="eyeLeft">
+                    <div class="eyeconLeft"></div>
+                </div>
+                <div class="eyeRight">
+                    <div class="eyeconRight"></div>
+                </div>
+                <div class="mouth">
+                    <div class="nose"></div>
+                </div>
+            </div>
+        <!-- 身体 -->
+        <div class="body">
+            <!-- 胳膊 -->
+            <div class="armLeft"></div>
+            <div class="armRight"></div>
+            <!-- 肚子 -->
+            <div class="tummy"></div>
+            <!-- 腿 -->
+            <div class="legLeft"></div>
+            <div class="legRight"></div>
+        </div>
+        <!-- 阴影 -->
+        <div class="shaodw"></div>
+    </div>
+</body>
+</html>
