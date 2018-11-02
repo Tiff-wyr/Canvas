@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>大转盘</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .main{
+        position: relative;
+    }
+   .bg{
+       position: absolute;
+       left: 116px;
+       top: 59px;
+       z-index: 99;
+       transition: transform 4s ease;
+   }
+   .lukey{
+    position: absolute;
+       left: 253px;
+       top: 148px;
+       z-index: 999;  
+   }
+  
+ 
+</style>
+<body>
+    <div class="main">
+        <img src="../imgs/images/大转盘素材/turntable-bg.jpg" alt="">
+        <img src="../imgs/images/大转盘素材/turntable.png" alt="" class="bg" id="bg">
+        <img src="../imgs/images/大转盘素材/pointer.png" alt="" class="lukey" onclick="lukey()">
+    </div>
+</body>
+<script>
+    let bg=document.getElementById("bg")
+    let deg = 0
+    function lukey(){
+        let score = Math.random()*360+360;
+        deg += score
+        console.log('hello')
+       bg.style.transform=`rotateZ(${deg}deg)`
+    }   
+  
+</script>
+</html>
