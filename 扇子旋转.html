@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>扇子旋转</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    .main{
+        margin: 50px 0;
+        text-align: center;
+        font-size: 0;
+    }
+    img {
+        transform-origin: center 200px;
+        transition:transform 2s ease;
+    }
+   img:hover{
+        transform: rotateZ(180deg);
+    }
+</style>
+<body>
+    <div class="main">
+        <img src="../imgs/images/形变中心点/39.jpg" alt="">
+    </div>
+</body>
+</html>
