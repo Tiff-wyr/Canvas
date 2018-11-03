@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+       *{
+        margin: 0;
+        padding: 0;
+    }
+
+   html body{
+       height: 100vh; 
+    }
+    .main{
+        position: relative;
+        width: 400px;
+        height: 200px;
+        margin: 100px auto;
+        perspective: 800px
+    }
+    .main img{
+        position: absolute;
+        width: 400px;
+        height: 200px;
+    }
+  .center{
+      z-index: 1000;
+      transform: translateZ(77px)
+  }
+.left1{
+    transform: rotateY(35deg) translateX(-80px)
+}
+.left2{
+    transform: rotateY(30deg) translateX(-120px);
+}
+.left3{
+    transform: rotateY(25deg) translateX(-190px);
+}
+.left4{
+    transform:rotateY(23deg) translateX(-270px);
+}
+.right1{
+    transform:rotateY(-35deg) translateX(80px) ;
+    z-index: 996;
+}
+.right2{
+    transform:rotateY(-30deg) translateX(120px) ;
+    z-index: 994;
+}
+.right3{
+    transform:rotateY(-25deg) translateX(190px) ;
+    z-index: 992;
+}
+.right4{
+    transform:rotateY(-23deg) translateX(270px) ;
+    z-index: 990;
+}
+
+</style>
+<body>
+    <div class="main">
+        <img src="../imgs/images/3D焦点图/1.jpg" alt="" class="left4">
+        <img src="../imgs/images/3D焦点图/2.jpg" alt="" class="left3">
+        <img src="../imgs/images/3D焦点图/3.jpg" alt="" class="left2">
+        <img src="../imgs/images/3D焦点图/4.jpg" alt="" class="left1">
+        <img src="../imgs/images/3D焦点图/5.jpg" alt="" class="center">
+        <img src="../imgs/images/3D焦点图/6.jpg" alt="" class="right1">
+        <img src="../imgs/images/3D焦点图/7.jpg" alt="" class="right2">
+        <img src="../imgs/images/3D焦点图/8.jpg" alt="" class="right3">
+        <img src="../imgs/images/3D焦点图/9.jpg" alt="" class="right4">
+    </div>
+    <button class="before">上一张</button>
+    <button class="after">下一张</button>
+</body>
+<script>
+    let buts=Array.from(document.querySelectorAll('button'))
+    let imgs=Array.from(document.querySelectorAll('img'))
+    let arr=['left4','left3','left2','left1','center','right1','right2','right3','right4']
+    buts[1].onclick=function(){
+        let last=arr.pop()
+        arr.unshift(last)
+        arr.forEach((item,index)=>{
+            imgs[index].className=item
+        })
+    }
+    buts[0].onclick=function(){
+        let first=arr.shift()
+        arr.push(first)
+        arr.forEach((item,index)=>{
+            imgs[index].className=item
+        })
+    } 
+</script>
+</html>
